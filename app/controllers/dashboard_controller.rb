@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
     port             = 443
     username         = 'ca_user'
     password         = 'ca_user'
-    datablock        = 292
+    datablock        = 297
     hash             = '5a2fb8e0701ae1c44c6966698c894278'
     sessionParam     = "sessionid"
     setupSessionURI  = "/mw/Session.Setup?Version=4.0&JSONData={\"Mapplets\":[{\"Guid\":\"B052A35E-DC3B-4283-B732-7BEE3B095C5E\",\"Version\":\"4.0\"}]}"
