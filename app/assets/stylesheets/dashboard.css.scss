@@ -1,0 +1,398 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+/* CSS Document */
+
+html { 
+	height:100%; font-size: 12px; 
+	font-family: Arial, Helvetica, sans-serif; 
+	color: #666666;
+	}
+	
+body { 
+	margin:0px 0px 0px 0px;
+	background-color: #336699; 
+	height:100%; 
+	text-align:left; 
+	}
+
+.form {
+	background-color: #e8e8e8;
+	padding:  10px 15px 10px 10px;
+	color: #555; 
+	font-weight: 500;
+	border-radius:4px;
+}
+
+.form select, input, textarea {
+	font-size: 12px;
+	width: 100%
+}
+
+#dialog input {
+	width: 54%;
+}
+
+.arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #e8e8e8;
+}
+
+.arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #e8e8e8;
+}
+
+.left {
+	margin-right: 10px;
+	float:left;
+}
+
+.right {
+	margin-left: 10px;
+	float: right;
+}
+
+.clear {
+	clear: both;
+	padding-top: 10px;
+}
+
+#center {
+	background-color: #dddddd;
+	width: 100%;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+#contentTier {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	/*background-image: url(contentTier_bg.gif);*/
+	background-repeat: no-repeat;
+	background-position: center top;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.contentTier_bg {
+	background-color: #FFFFFF;
+	background-image: url(contentTier_bgTop.gif);
+	margin: 0px;
+	padding-top: 10px;
+	background-repeat: no-repeat;
+}
+.contentTier_bttm {
+	width: 960px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	background-image: url(contentTier_bgBttm.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 10px;
+	padding: 0px;
+}
+.header {
+	height:82px;
+	background-image:url(header_bg.gif);
+	background-repeat:repeat-x;
+}
+	
+	
+.footer {
+	background-color: #336699;
+	color:#FFFFFF;
+	font-family:Arial;
+	padding: 0px;
+	margin: 0px;
+}
+.center1000 {
+	width:960px;
+	text-align: center;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	}
+.header1000 {
+	width:1000px;
+	text-align: center;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	height: 82px;
+	}
+.quadrant {
+	text-align: left;
+	padding: 0px;
+	width: 440px;
+	margin-top: 0px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+}
+#clearFLT {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+}
+
+.quadrantLft {
+	text-align: left;
+	padding: 0px;
+	width: 20%;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+.quadrantRt {
+	text-align: left;
+	padding: 0px;
+	width: 75%;
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	height:420px;
+	float: right;
+	-moz-box-shadow: 0 0 5px 5px #ccc;
+	-webkit-box-shadow: 0 0 5px 5px #ccc;
+	box-shadow: 0 0 5px 5px #ccc;
+}
+.quadrantBox {
+	background-color: #e8e8e8;
+	color: #336699;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	border: 1px solid #999999;
+	height: 175px;
+	font-weight: bold;
+}
+	
+.quadrantBox a:link, a:active { 
+	color:#336699;
+	font-weight:normal; 
+	text-decoration:none; 
+	}
+
+.quadrantBox a:hover { 
+	color: #003366; 
+	text-decoration:none; 
+	}
+.quadrantBox ul {
+	margin: 15px;
+	padding: 0px;
+	width: 100%;
+}
+.quadrantBox ul li {
+	text-align: left;
+	margin: 0px;
+	list-style-type: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+}
+
+.logoLFT {
+	text-align: left;
+	padding: 0px;
+	width: 171px;
+	margin-top: 40px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: none;
+	float: left;
+}
+.search {
+	margin: 7px;
+	padding: 0px;
+	clear: none;
+	float: right;
+	width: 800px;
+	text-align: right;
+}
+.navbar {
+	padding: 0px;
+	clear: none;
+	float: right;
+	width: 800px;
+	text-align: right;
+	margin-top: 15px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+.navbar ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.navbar li {
+	display: inline;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+
+	
+img { border:0px; }
+	
+p { 
+	line-height: 130%; 
+	margin: 0px; 
+	padding-top: 0px; 
+	padding-right: 0px; 
+	padding-bottom: 10px; 
+	padding-left: 0px; 
+	}
+	
+hr { 
+	line-height:0px; 
+	width:100%; 
+	height:1px; 
+	border:0px; 
+	background:#dddddd; 
+	line-height:0;
+	}
+	
+h1 {
+	font-size:115%;
+	padding:0px;
+	color: #000000;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	text-transform: uppercase;
+	}
+	
+ul {
+	list-style-type:none;
+	margin:0px; 
+	padding:0px; 
+	}	
+	
+ul li	{
+	margin:2px 5px 2px 5px; /*T R B L*/
+	margin-left:5px;
+	padding:0px 0px 0px 15px;/*T R B L*/
+	line-height:16px;
+	list-style-type:none;
+	}
+	
+a:link, a:active { 
+	color:#0066CC; 
+	font-weight:normal; 
+	text-decoration:none; 
+	}
+
+a:hover { 
+	color: #003366; 
+	text-decoration:none; 
+	}
+	
+.footerContent {
+	padding: 0px;
+	width: 930px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #FFFFFF;
+	margin-top: 10px;
+}
+.footerContent p {
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	text-align: left;
+}
+.footerContent ul {
+font-size:95%;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	text-align: left;
+	margin: 0px;
+}
+.footerContent li  
+{
+    list-style-type:none;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 4px;
+	padding-left: 0px;
+	text-align: left;
+}
+.footerContentCorp {
+	padding: 0px;
+	width: 155px;
+	text-align: left;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+}
+.footerContentAlt {
+	padding: 0px;
+	width: 155px;
+	text-align: left;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+}
+.footerContent {
+	padding: 0px 0;
+	width: 930px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #FFFFFF;
+}
+.footerContent a {
+	color: #FFFFFF;
+}
+	
+#footerContent ul {
+	list-style-type:none;
+	margin:0px; 
+	padding:0px; 
+	}	
+	
+#footerContent ul li	{
+	margin:2px 5px 2px 5px; /*T R B L*/
+	margin-left:5px;
+	padding:0px 0px 0px 15px;/*T R B L*/
+	line-height:14px;
+	list-style-type:square;
+	}

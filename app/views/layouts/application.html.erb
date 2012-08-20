@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArgosWeb Embedded Dashboarding Example</title>
+  <link href="css/jquery.treeview.css" rel="stylesheet" type="text/css" id="skinSheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.treeview.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      //tree
+      $("#navigation").treeview({
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+      $("#dialog").dialog({
+        autoOpen : false,
+        modal : true,
+        resizable : false,
+        minWidth : 325
+      });
+
+      $("#opener").click(function() {
+        $("#dialog").dialog("open");
+        return false;
+      });
+    });
+  </script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="dialog" title="Operating Ledger">
+    <!-- Report = Banner.Finance.Baseline.Operating Ledger.Operating Ledger.OL by Fund and Orgn with Account Detail -->
+    <form method=post action="http://prod.evisions.com/mrr">
+      <input type="hidden" name="report" value="GLFRSKASUJFXEHZMAV43RNBOBNUNZVXCEUXESB545NWGHJI2TBWDNMLYE2GDKAUGRXIXSR66NEETS">
+
+      <p class="clearAll">
+        <label>Chart of Accounts:</label>
+        <select id="coas">
+          <option value="B">Evisions, Irvine Campus</option>
+          <option value="B">Evisions, Portland Campus</option>
+        </select>
+      </p>
+      <p class="clearAll">
+        <label>Fiscal Year:</label>
+        <select id="fsyr">
+          <option value="11">2011</option>
+          <option value="10">2010</option>
+          <option value="09">2009</option>
+          <option value="08">2008</option>
+          <option value="07">2007</option>
+        </select>
+      </p>
+      <p class="clearAll">
+        <label>Fiscal Period:</label>
+        <select id="fspd">
+          <option value="00">00: Previous Year End</option>
+          <option value="01">01: July</option>
+          <option value="02">02: August</option>
+          <option value="03">03: September</option>
+          <option value="04">04: October</option>
+          <option value="05">05: November</option>
+          <option value="06">06: December</option>
+          <option value="07">07: January</option>
+          <option value="08">08: February</option>
+          <option value="09">09: March</option>
+          <option value="10">10: April</option>
+          <option value="11">11: May</option>
+          <option value="12">12: June</option>
+          <option value="13">13: Unadjusted Year End</option>
+          <option value="14">14: Adjusted Year End</option>
+        </select>
+      </p>
+      <p class="clearAll">
+        <input type="submit" value="Build Report">
+      </p>
+    </form>
+  </div>
+  <!--- Header -->
+  <div class="header">
+    <div class="header1000">
+      <div class="logoLFT"><img src="assets/evisions-logo.gif" alt="Evisions" width="171" height="42" />
+      </div>
+      <div class="search"><img src="assets/login-off.png" alt="login" width="98" height="20" />&nbsp;&nbsp; <img src="assets/fpo-search.png" width="175" height="18" alt="Go" />&nbsp;&nbsp; <img src="assets/bttn_go.png" width="36" height="20" alt="Go" />
+      </div>
+      <div class="navbar">
+        <ul>
+          <li>
+            Home
+          </li>
+          <li>
+            My Argos Reports
+          </li>
+          <li>
+            Student Self Service
+          </li>
+          <li>
+            Departmental Deposits
+          </li>
+          <li>
+            Revenue Portal
+          </li>
+          <li>
+            Tutorial
+          </li>
+          <li>
+            Google
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--- Header closed -->
+  <div id="center">
+    <div class="center1000">
+      <div id="contentTier">
+        <div class="contentTier_bg">
+          <!-- Row One -->
+          <div class="quadrantLft">
+            <h2>Available Reports</h2>
+            <ul id="navigation" class="filetree">
+              <li>
+                <span class="folder"> Current Enrollment</span>
+                <ul>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=OYZKPV34NOCT2NGCPRGVND6BMK3ZDN76LZUVZSJHNLV6VMIJL62J3Y45GTSCZL3HOBCG7RUKHQHNM" target='_blank'>Enrollment Analysis</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=TVS2WID5JGD36VY4M5XHJMF2PPELCQGDAN6ZO254JO66MP3YAFYTCAPRMVEG72NW7WFYWHAHPLBEK" target='_blank'>Enrollment Funnel</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=PUFLVOKFKGCE3JEBBXV42SV7XEJWYG4NU7Z363DNKNJ4SHKUQHXWDEDWYXO23MM26DPJZIFJ342XQ" target='_blank'>Financial Analysis</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod2.evisions.com/argos/index.html?report=XHCD6MGT4BVVVVFIANW4BXSJG4OOOUN4JRQP74CGT43VYIIQ6Q3COIZ3Q662RJ32ZIM7GVH5QC7C2" target='_blank'>IPED Fall Enrollment</a> </span>
+                  </li>
+                </ul>
+              </li>
+              <li class="closed">
+                <span class="folder"> Applicant Information</span>
+                <ul>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=BZDTRONUZDTNA2UB2HAHPJG7MIANC7NLHAYTMLGMH4XT2ROXAXKCTJVWF6SWHR32YVAG4WPAW37EM" target='_blank'>Admissions Application Report</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=BIY5HCKJ6P3TDDOFNU7DAR32WSZX35PWUHTBSUDC6ICA2J7W5HMI2J3NLA42N5Y2EFLLF374EHTEM" target='_blank'>Application Dashboard</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=GBEDVW3T2IFGUJJ4EDB5XXHSTTVPPNSYJCKJ6XOZWQZANGEEBO6AOALZPPT7F4WZWIWOTEKJICMXC" target='_blank'>Institution Recruiting</a> </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="folder"> Financial Reporting</span>
+                <ul>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=KJ2LS7GD25K5ZTT44IA27KOE76LNPXGCAGP72QOTQMU5KYOO4DJUZQVYK6QX3N5U5UPXIZEEYBSUC" target='_blank'>Budget Availability</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="#" id="opener">Operating Ledger</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=NDUO7CTED7I5WM3LRNAAOQQMUOSBTRRMIYYYBWSQ3Q6RL2ZXJJZWHQVRJUP4GRI3IPWPM7L646YLI" target='_blank'>Financial Dashboard</a> </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="folder"> Student Information</span>
+                <ul>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=NO4T5OLYQUOOW25C7WU2EWJ45BUYLZXN5NLNTB6KX77I7OQLCJFX3CF36N3ZPUBC2G57TDZ5GZIG4" target='_blank'>Performance Analysis</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/argos/index.html?report=TNPVBEWGXZOLDACXBNFMURR7HUPOHPNXRLH23NEW3WWX4B3WMMY3NNYD7SJHVUPBP556MMJQ77BT4" target='_blank'>Student Dashboard</a> </span>
+                  </li>
+                  <li>
+                    <span class="file"><a href="http://prod.evisions.com/mrr?report=UQ5ZIADPDH6OYFKRAH6LNE4V7ARTBIOPFPXFE6HHLU576YEQKMHPGH2EPXF6NT7XHKRVDFL2TFM74">Address List</a></span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="folder"> Advancement Information</span>
+                <ul>
+                  <li>
+                    <span class="file"> <a href="http://prod.evisions.com/mrr?report=WEJHJZU3FXOST5DSVMJJ3KTH4GE6ROHFMZSIITVJL6LT2PKGMCV7564Y6IQFLASE6RN2FHMEOR7II" target='_blank'>3 Year Loyal Donors</a> </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- end quadrantLft -->
+          <div class="quadrantRt">
+            <%= yield %>
+          </div>
+          <div id="clearFLT"></div>
+        </div>
+        <!-- end contentTier_bg -->
+        <div class="contentTier_bttm"></div>
+        <div id="clearFLT"></div>
+      </div>
+    </div>
+  </div>
+  <!--- Center closed -->
+  <div class="footer">
+    <div class="center1000">
+      <div class="footerContent">
+        <div class="footerContentAlt">
+          <p>
+            <strong>Products</strong>
+          </p>
+          <ul>
+            <li>
+              Argos
+            </li>
+            <li>
+              FormFusion
+            </li>
+            <li>
+              IntelleCheck
+            </li>
+            <li>
+              MAPS
+            </li>
+          </ul>
+        </div>
+        <div class="footerContentAlt">
+          <p>
+            <strong>Site Links</strong>
+          </p>
+          <ul>
+            <li>
+              Login
+            </li>
+            <li>
+              Weekly Training
+            </li>
+            <li>
+              Product Sales Videos
+            </li>
+          </ul>
+        </div>
+        <div class="footerContentAlt">
+          <p>
+            <strong>Services</strong>
+          </p>
+          <ul>
+            <li>
+              Training
+            </li>
+            <li>
+              Development
+            </li>
+            <li>
+              Consulting
+            </li>
+          </ul>
+        </div>
+        <div class="footerContentAlt">
+          <p>
+            <strong>Support</strong>
+          </p>
+          <ul>
+            <li>
+              Documentation
+            </li>
+            <li>
+              FAQs
+            </li>
+            <li>
+              Knowledge Base
+            </li>
+            <li>
+              CO-OP User Community
+            </li>
+            <li>
+              Upgrades
+            </li>
+          </ul>
+        </div>
+        <div class="footerContentAlt">
+          <p>
+            <strong>Company</strong>
+          </p>
+          <ul>
+            <li>
+              About Us
+            </li>
+            <li>
+              Contact
+            </li>
+            <li>
+              News &amp; Events
+            </li>
+            <li>
+              Partners
+            </li>
+            <li>
+              Testimonials
+            </li>
+          </ul>
+        </div>
+        <div class="footerContentCorp">
+          <p>
+            <strong>Follow Us On</strong>
+            <br />
+            <img width="16" height="16" name="Facebook" alt="Facebook" src="assets/32x32-facebook.gif" />&#160;&#160;<img width="16" height="16" name="Twitter" alt="Twitter" src="assets/32x32-twitter.gif" />&#160;&#160;<img width="16" height="16" name="LinkedIn" alt="LinkedIn" src="assets/32x32-linkedin.gif" />&#160;&#160;<img width="16" height="16" name="YouTube" alt="YouTube" src="assets/32x32-youtube.gif" />
+          </p>
+          <p>
+            <strong>Evisions, Inc.</strong>
+            <br />
+            410 Exchange, Suite 250
+            <br />
+            Irvine, CA 92602
+            <br />
+            tel (714) 824-5252
+            <br />
+            fax (714) 730-2524
+          </p>
+          <p>
+            Copyright ©2010
+            <br />
+            Evisions, Inc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--- Footer closed -->
+</body>
+</html>
